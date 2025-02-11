@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Imagem</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="/images/kk.jpg" alt="Imagem de Fundo" class="background-image">
+    </div>
+    <div class="overlay">
+        <p id="countdown">Voltando para o Discord em tempo 5</p>
+        <a href="https://discord.gg/seulink" class="discord-link">Entre no Discord</a>
+    </div>
+    
+    <script>
+        let timeLeft = 5;
+        const countdownElement = document.getElementById('countdown');
+
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            if (timeLeft >= 0) {
+                countdownElement.textContent = `Voltando para o Discord em tempo ${timeLeft}`;
+            }
+
+            if (timeLeft < 0) {
+                clearInterval(countdownInterval);
+                window.location.href = 'https://discord.gg/5XgRxCp5pX';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
